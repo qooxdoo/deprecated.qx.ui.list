@@ -17,11 +17,11 @@
 ************************************************************************ */
 
 /**
- * A widget cell provider provides the {@link qx.ui.virtual.layer.WidgetCell}
+ * A widget cell provider provides the {@link qx.ui.list.virtual.layer.WidgetCell}
  * with configured widgets to render the cells and pools/releases unused
  * cell widgets.
  */
-qx.Interface.define("qx.ui.virtual.core.IWidgetCellProvider", {
+qx.Interface.define("qx.ui.list.virtual.core.IWidgetCellProvider", {
   members: {
     /**
      * This method returns the configured cell for the given cell. The return

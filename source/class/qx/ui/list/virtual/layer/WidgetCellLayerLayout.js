@@ -1,4 +1,4 @@
-qx.Class.define("qx.ui.virtual.layer.WidgetCellLayerLayout", {
+qx.Class.define("qx.ui.list.virtual.layer.WidgetCellLayerLayout", {
   extend: qx.ui.layout.Abstract,
 
   members: {

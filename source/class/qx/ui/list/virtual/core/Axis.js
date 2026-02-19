@@ -21,7 +21,7 @@
  * items have the same size but it is also possible to give specific items
  * a different size.
  */
-qx.Class.define("qx.ui.virtual.core.Axis", {
+qx.Class.define("qx.ui.list.virtual.core.Axis", {
   extend: qx.core.Object,
 
   /**

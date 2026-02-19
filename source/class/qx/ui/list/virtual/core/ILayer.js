@@ -20,19 +20,19 @@
  * A layer is responsible to render one aspect of a virtual pane. The pane tells
  * each layer to render/update a specific window of the virtual grid.
  */
-qx.Interface.define("qx.ui.virtual.core.ILayer", {
+qx.Interface.define("qx.ui.list.virtual.core.ILayer", {
   members: {
     /**
      * Called once to connect the layer to the pane that uses it
      *
-     * @param pane {qx.ui.virtual.core.Pane} the pane
+     * @param pane {qx.ui.list.virtual.core.Pane} the pane
      */
     connectToPane(pane) {},
 
     /**
      * Returns the connected pane
      *
-     * @return {qx.ui.virtual.core.Pane} the connected pane
+     * @return {qx.ui.list.virtual.core.Pane} the connected pane
      */
     getPane() {},
 

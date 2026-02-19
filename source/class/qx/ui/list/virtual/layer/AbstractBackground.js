@@ -19,8 +19,8 @@
 /**
  * Abstract base class for the {@link Row} and {@link Column} layers.
  */
-qx.Class.define("qx.ui.virtual.layer.AbstractBackground", {
-  extend: qx.ui.virtual.layer.Abstract,
+qx.Class.define("qx.ui.list.virtual.layer.AbstractBackground", {
+  extend: qx.ui.list.virtual.layer.Abstract,
 
   construct() {
     super();

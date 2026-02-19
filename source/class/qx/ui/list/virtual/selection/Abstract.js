@@ -19,9 +19,9 @@
 
 /**
  * Abstract base class for selection manager, which manage selectable items
- * rendered in a virtual {@link qx.ui.virtual.core.Pane}.
+ * rendered in a virtual {@link qx.ui.list.virtual.core.Pane}.
  */
-qx.Class.define("qx.ui.virtual.selection.Abstract", {
+qx.Class.define("qx.ui.list.virtual.selection.Abstract", {
   extend: qx.ui.core.selection.Abstract,
 
   /*
@@ -31,9 +31,9 @@ qx.Class.define("qx.ui.virtual.selection.Abstract", {
    */
 
   /**
-   * @param pane {qx.ui.virtual.core.Pane} The virtual pane on which the
+   * @param pane {qx.ui.list.virtual.core.Pane} The virtual pane on which the
    *    selectable item are rendered
-   * @param selectionDelegate {qx.ui.virtual.selection.ISelectionDelegate?null} An optional delegate,
+   * @param selectionDelegate {qx.ui.list.virtual.selection.ISelectionDelegate?null} An optional delegate,
    *    which can be used to customize the behavior of the selection manager
    *    without sub classing it.
    */
@@ -41,7 +41,7 @@ qx.Class.define("qx.ui.virtual.selection.Abstract", {
     super();
 
     if (qx.core.Environment.get("qx.debug")) {
-      this.assertInstance(pane, qx.ui.virtual.core.Pane);
+      this.assertInstance(pane, qx.ui.list.virtual.core.Pane);
     }
 
     this._pane = pane;
@@ -121,7 +121,7 @@ qx.Class.define("qx.ui.virtual.selection.Abstract", {
      * Attach key events to manipulate the selection using the keyboard. The
      * event target doesn't need to be the pane itself. It can be an widget,
      * which received key events. Usually the key event target is the
-     * {@link qx.ui.virtual.core.Scroller}.
+     * {@link qx.ui.list.virtual.core.Scroller}.
      *
      * @param target {qx.core.Object} the key event target.
      *

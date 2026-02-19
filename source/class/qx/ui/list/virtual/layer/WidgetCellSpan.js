@@ -21,24 +21,24 @@
  * An extended WidgetCell layer, which adds the possibility to specify row and
  * column spans for specific cells.
  */
-qx.Class.define("qx.ui.virtual.layer.WidgetCellSpan", {
-  extend: qx.ui.virtual.layer.Abstract,
+qx.Class.define("qx.ui.list.virtual.layer.WidgetCellSpan", {
+  extend: qx.ui.list.virtual.layer.Abstract,
 
   include: [qx.ui.core.MChildrenHandling],
 
   /**
-   * @param widgetCellProvider {qx.ui.virtual.core.IWidgetCellProvider} This
+   * @param widgetCellProvider {qx.ui.list.virtual.core.IWidgetCellProvider} This
    *    class manages the life cycle of the cell widgets.
-   * @param rowConfig {qx.ui.virtual.core.Axis} The row configuration of the pane
+   * @param rowConfig {qx.ui.list.virtual.core.Axis} The row configuration of the pane
    *    in which the cells will be rendered
-   * @param columnConfig {qx.ui.virtual.core.Axis} The column configuration of the pane
+   * @param columnConfig {qx.ui.list.virtual.core.Axis} The column configuration of the pane
    *    in which the cells will be rendered
    */
   construct(widgetCellProvider, rowConfig, columnConfig) {
     super(rowConfig, columnConfig);
     this.setZIndex(12);
 
-    this._spanManager = new qx.ui.virtual.layer.CellSpanManager(
+    this._spanManager = new qx.ui.list.virtual.layer.CellSpanManager(
       rowConfig,
       columnConfig
     );
@@ -46,7 +46,7 @@ qx.Class.define("qx.ui.virtual.layer.WidgetCellSpan", {
     this._cellProvider = widgetCellProvider;
     this.__spacerPool = [];
 
-    this._cellLayer = new qx.ui.virtual.layer.WidgetCell(
+    this._cellLayer = new qx.ui.list.virtual.layer.WidgetCell(
       this.__getCellProviderForNonSpanningCells()
     );
 
@@ -155,7 +155,7 @@ qx.Class.define("qx.ui.virtual.layer.WidgetCellSpan", {
     /**
      * Get the cell provider for the non spanning cells
      *
-     * @return {qx.ui.virtual.core.IWidgetCellProvider} the cell provider
+     * @return {qx.ui.list.virtual.core.IWidgetCellProvider} the cell provider
      */
     __getCellProviderForNonSpanningCells() {
       var self = this;

@@ -21,32 +21,32 @@
  * The WidgetCell layer renders each cell with a qooxdoo widget. The concrete
  * widget instance for each cell is provided by a cell provider.
  */
-qx.Class.define("qx.ui.virtual.layer.WidgetCell", {
-  extend: qx.ui.virtual.layer.Abstract,
+qx.Class.define("qx.ui.list.virtual.layer.WidgetCell", {
+  extend: qx.ui.list.virtual.layer.Abstract,
 
   include: [qx.ui.core.MChildrenHandling],
   implement: [
-    qx.ui.virtual.core.IWidgetCellProvider,
-    qx.ui.virtual.core.ILayerCellSizeProvider
+    qx.ui.list.virtual.core.IWidgetCellProvider,
+    qx.ui.list.virtual.core.ILayerCellSizeProvider
   ],
 
   /**
-   * @param widgetCellProvider {qx.ui.virtual.core.IWidgetCellProvider} This
+   * @param widgetCellProvider {qx.ui.list.virtual.core.IWidgetCellProvider} This
    *    class manages the life cycle of the cell widgets.
-   * @param rowConfig {qx.ui.virtual.core.Axis} The row configuration of the pane
+   * @param rowConfig {qx.ui.list.virtual.core.Axis} The row configuration of the pane
    *    in which the cells will be rendered
-   * @param columnConfig {qx.ui.virtual.core.Axis} The column configuration of the pane
+   * @param columnConfig {qx.ui.list.virtual.core.Axis} The column configuration of the pane
    *    in which the cells will be rendered
    */
   construct(widgetCellProvider) {
     super();
     this.setZIndex(12);
-    this._setLayout(new qx.ui.virtual.layer.WidgetCellLayerLayout());
+    this._setLayout(new qx.ui.list.virtual.layer.WidgetCellLayerLayout());
 
     if (qx.core.Environment.get("qx.debug")) {
       this.assertInterface(
         widgetCellProvider,
-        qx.ui.virtual.core.IWidgetCellProvider
+        qx.ui.list.virtual.core.IWidgetCellProvider
       );
     }
 
@@ -106,7 +106,7 @@ qx.Class.define("qx.ui.virtual.layer.WidgetCell", {
       if (
         qx.Interface.objectImplements(
           this._cellProvider,
-          qx.ui.virtual.core.ILayerCellSizeProvider
+          qx.ui.list.virtual.core.ILayerCellSizeProvider
         )
       )
         return this._cellProvider.getCellSizeHint(rowIndex, columnIndex);

@@ -18,10 +18,10 @@
 ************************************************************************ */
 
 /**
- * A HTML cell provider provides the {@link qx.ui.virtual.layer.HtmlCell}
+ * A HTML cell provider provides the {@link qx.ui.list.virtual.layer.HtmlCell}
  * with HTML fragments to render the cells.
  */
-qx.Interface.define("qx.ui.virtual.cell.ICell", {
+qx.Interface.define("qx.ui.list.virtual.cell.ICell", {
   members: {
     /**
      * Returns all relevant properties of the cell:

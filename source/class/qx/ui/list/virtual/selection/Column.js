@@ -19,8 +19,8 @@
 /**
  * Column selection manager
  */
-qx.Class.define("qx.ui.virtual.selection.Column", {
-  extend: qx.ui.virtual.selection.Row,
+qx.Class.define("qx.ui.list.virtual.selection.Column", {
+  extend: qx.ui.list.virtual.selection.Row,
 
   /*
   *****************************************************************************

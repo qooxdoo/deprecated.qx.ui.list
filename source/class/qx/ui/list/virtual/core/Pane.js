@@ -24,7 +24,7 @@
  * The pane computes, which cells of the virtual area is visible and instructs
  * the layers to render these cells.
  */
-qx.Class.define("qx.ui.virtual.core.Pane", {
+qx.Class.define("qx.ui.list.virtual.core.Pane", {
   extend: qx.ui.core.Widget,
 
   /**
@@ -36,12 +36,12 @@ qx.Class.define("qx.ui.virtual.core.Pane", {
   construct(rowCount, columnCount, cellHeight, cellWidth) {
     super();
 
-    this.__rowConfig = new qx.ui.virtual.core.Axis(
+    this.__rowConfig = new qx.ui.list.virtual.core.Axis(
       cellHeight || 28,
       rowCount || 0
     );
 
-    this.__columnConfig = new qx.ui.virtual.core.Axis(
+    this.__columnConfig = new qx.ui.list.virtual.core.Axis(
       cellWidth || 100,
       columnCount || 0
     );
@@ -56,9 +56,9 @@ qx.Class.define("qx.ui.virtual.core.Pane", {
     this.__jobs = {};
 
     // create layer container.
-    this._setLayout(new qx.ui.virtual.core.BoundsLayout());
+    this._setLayout(new qx.ui.list.virtual.core.BoundsLayout());
     this.__layerContainer = new qx.ui.container.Composite(
-      new qx.ui.virtual.core.BoundsLayout()
+      new qx.ui.list.virtual.core.BoundsLayout()
     );
 
     this._add(this.__layerContainer);
@@ -80,13 +80,13 @@ qx.Class.define("qx.ui.virtual.core.Pane", {
 
   events: {
     /** Fired if a cell is tapped. */
-    cellTap: "qx.ui.virtual.core.CellEvent",
+    cellTap: "qx.ui.list.virtual.core.CellEvent",
 
     /** Fired if a cell is right-clicked. */
-    cellContextmenu: "qx.ui.virtual.core.CellEvent",
+    cellContextmenu: "qx.ui.list.virtual.core.CellEvent",
 
     /** Fired if a cell is double-tapped. */
-    cellDbltap: "qx.ui.virtual.core.CellEvent",
+    cellDbltap: "qx.ui.list.virtual.core.CellEvent",
 
     /** Fired on resize of either the container or the (virtual) content. */
     update: "qx.event.type.Event",
@@ -185,7 +185,7 @@ qx.Class.define("qx.ui.virtual.core.Pane", {
     __firstColumn: 0,
     __pointerDownCoords: null,
 
-    /** @type {qx.ui.virtual.core.ICellSizeProvider[]} the layers which provide cell sizes */
+    /** @type {qx.ui.list.virtual.core.ICellSizeProvider[]} the layers which provide cell sizes */
     __cellSizeProviders: null,
 
     /*
@@ -197,7 +197,7 @@ qx.Class.define("qx.ui.virtual.core.Pane", {
     /**
      * Get the axis object, which defines the row numbers and the row sizes.
      *
-     * @return {qx.ui.virtual.core.Axis} The row configuration.
+     * @return {qx.ui.list.virtual.core.Axis} The row configuration.
      */
     getRowConfig() {
       return this.__rowConfig;
@@ -232,7 +232,7 @@ qx.Class.define("qx.ui.virtual.core.Pane", {
     /**
      * Get the axis object, which defines the column numbers and the column sizes.
      *
-     * @return {qx.ui.virtual.core.Axis} The column configuration.
+     * @return {qx.ui.list.virtual.core.Axis} The column configuration.
      */
     getColumnConfig() {
       return this.__columnConfig;
@@ -263,11 +263,11 @@ qx.Class.define("qx.ui.virtual.core.Pane", {
     /**
      * Add a layer to the layer container.
      *
-     * @param layer {qx.ui.virtual.core.ILayer} The layer to add.
+     * @param layer {qx.ui.list.virtual.core.ILayer} The layer to add.
      */
     addLayer(layer) {
       if (qx.core.Environment.get("qx.debug")) {
-        this.assertInterface(layer, qx.ui.virtual.core.ILayer);
+        this.assertInterface(layer, qx.ui.list.virtual.core.ILayer);
       }
 
       this.__layers.push(layer);
@@ -277,7 +277,7 @@ qx.Class.define("qx.ui.virtual.core.Pane", {
       if (
         qx.Interface.classImplements(
           layer.constructor,
-          qx.ui.virtual.core.ILayerCellSizeProvider
+          qx.ui.list.virtual.core.ILayerCellSizeProvider
         )
       ) {
         if (this.__cellSizeProviders === null) this.__cellSizeProviders = [];
@@ -288,7 +288,7 @@ qx.Class.define("qx.ui.virtual.core.Pane", {
     /**
      * Get a list of all layers.
      *
-     * @return {qx.ui.virtual.core.ILayer[]} List of the pane's layers.
+     * @return {qx.ui.list.virtual.core.ILayer[]} List of the pane's layers.
      */
     getLayers() {
       return this.__layers;
@@ -297,7 +297,7 @@ qx.Class.define("qx.ui.virtual.core.Pane", {
     /**
      * Get a list of all visible layers.
      *
-     * @return {qx.ui.virtual.core.ILayer[]} List of the pane's visible layers.
+     * @return {qx.ui.list.virtual.core.ILayer[]} List of the pane's visible layers.
      */
     getVisibleLayers() {
       var layers = [];
@@ -788,7 +788,7 @@ qx.Class.define("qx.ui.virtual.core.Pane", {
         return;
       }
 
-      this.fireNonBubblingEvent(cellEventType, qx.ui.virtual.core.CellEvent, [
+      this.fireNonBubblingEvent(cellEventType, qx.ui.list.virtual.core.CellEvent, [
         this,
         e,
         coords.row,

@@ -26,7 +26,7 @@ qx.Interface.define("qx.ui.list.provider.IListProvider", {
     /**
      * Creates a layer for item and group rendering.
      *
-     * @return {qx.ui.virtual.layer.Abstract} new layer.
+     * @return {qx.ui.list.virtual.layer.Abstract} new layer.
      */
     createLayer() {},
 

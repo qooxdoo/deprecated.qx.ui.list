@@ -23,7 +23,7 @@
  * have to render this pre-computed area again.
  *
  */
-qx.Class.define("qx.ui.virtual.behavior.Prefetch", {
+qx.Class.define("qx.ui.list.virtual.behavior.Prefetch", {
   extend: qx.core.Object,
 
   /*
@@ -33,7 +33,7 @@ qx.Class.define("qx.ui.virtual.behavior.Prefetch", {
   */
 
   /**
-   * @param scroller {qx.ui.virtual.core.Scroller} The scroller to prefetch
+   * @param scroller {qx.ui.list.virtual.core.Scroller} The scroller to prefetch
    * @param settings {Map} This map contains minimum and maximum pixels to
    * prefetch near the view port.
    * <ul>
@@ -92,9 +92,9 @@ qx.Class.define("qx.ui.virtual.behavior.Prefetch", {
    */
 
   properties: {
-    /** @type {qx.ui.virtual.core.Scroller} The scroller to prefetch */
+    /** @type {qx.ui.list.virtual.core.Scroller} The scroller to prefetch */
     scroller: {
-      check: "qx.ui.virtual.core.Scroller",
+      check: "qx.ui.list.virtual.core.Scroller",
       nullable: true,
       init: null,
       apply: "_applyScroller"

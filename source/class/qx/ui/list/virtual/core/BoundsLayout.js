@@ -1,4 +1,4 @@
-qx.Class.define("qx.ui.virtual.core.BoundsLayout", {
+qx.Class.define("qx.ui.list.virtual.core.BoundsLayout", {
   extend: qx.ui.layout.Abstract,
 
   construct() {

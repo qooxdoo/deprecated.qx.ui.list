@@ -17,7 +17,7 @@
 ************************************************************************ */
 
 /**
- * The provider implements the {@link qx.ui.virtual.core.IWidgetCellProvider} API,
+ * The provider implements the {@link qx.ui.list.virtual.core.IWidgetCellProvider} API,
  * which can be used as delegate for the widget cell rendering and it
  * provides a API to bind the model with the rendered item.
  *
@@ -27,7 +27,7 @@ qx.Class.define("qx.ui.list.provider.WidgetProvider", {
   extend: qx.core.Object,
 
   implement: [
-    qx.ui.virtual.core.IWidgetCellProvider,
+    qx.ui.list.virtual.core.IWidgetCellProvider,
     qx.ui.list.provider.IListProvider
   ],
 
@@ -70,10 +70,10 @@ qx.Class.define("qx.ui.list.provider.WidgetProvider", {
   },
 
   members: {
-    /** @type {qx.ui.virtual.cell.WidgetCell} the used item renderer */
+    /** @type {qx.ui.list.virtual.cell.WidgetCell} the used item renderer */
     _itemRenderer: null,
 
-    /** @type {qx.ui.virtual.cell.WidgetCell} the used group renderer */
+    /** @type {qx.ui.list.virtual.cell.WidgetCell} the used group renderer */
     _groupRenderer: null,
 
     /** @type {qx.ui.list.column.AbstractColumn[]} the columns for tabular presentation */
@@ -253,7 +253,7 @@ qx.Class.define("qx.ui.list.provider.WidgetProvider", {
      * @Override
      */
     createLayer() {
-      return new qx.ui.virtual.layer.WidgetCell(this);
+      return new qx.ui.list.virtual.layer.WidgetCell(this);
     },
 
     /*
@@ -280,7 +280,7 @@ qx.Class.define("qx.ui.list.provider.WidgetProvider", {
         };
       }
 
-      var renderer = new qx.ui.virtual.cell.WidgetCell().set({
+      var renderer = new qx.ui.list.virtual.cell.WidgetCell().set({
         delegate: {
           createWidget: createWidget
         }
@@ -307,7 +307,7 @@ qx.Class.define("qx.ui.list.provider.WidgetProvider", {
         };
       }
 
-      var renderer = new qx.ui.virtual.cell.WidgetCell().set({
+      var renderer = new qx.ui.list.virtual.cell.WidgetCell().set({
         delegate: {
           createWidget: createWidget
         }

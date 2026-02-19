@@ -41,7 +41,7 @@
  *
  * @internal
  */
-qx.Mixin.define("qx.ui.virtual.selection.MModel", {
+qx.Mixin.define("qx.ui.list.virtual.selection.MModel", {
   construct() {
     this._initSelectionManager();
     this.__selection = new qx.data.Array();
@@ -114,7 +114,7 @@ qx.Mixin.define("qx.ui.virtual.selection.MModel", {
   },
 
   members: {
-    /** @type {qx.ui.virtual.selection.Row} selection manager */
+    /** @type {qx.ui.list.virtual.selection.Row} selection manager */
     _manager: null,
 
     /** @type {Boolean} flag to ignore the selection change from {@link #selection} */
@@ -180,7 +180,7 @@ qx.Mixin.define("qx.ui.virtual.selection.MModel", {
         }
       };
 
-      this._manager = new qx.ui.virtual.selection.CellRectangle(
+      this._manager = new qx.ui.list.virtual.selection.CellRectangle(
         this.getPane(),
         selectionDelegate
       );

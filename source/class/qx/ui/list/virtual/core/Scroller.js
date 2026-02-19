@@ -21,9 +21,9 @@
  * The Scroller wraps a {@link Pane} and provides scroll bars to interactively
  * scroll the pane's content.
  *
- * @childControl pane {qx.ui.virtual.core.Pane} Virtual pane.
+ * @childControl pane {qx.ui.list.virtual.core.Pane} Virtual pane.
  */
-qx.Class.define("qx.ui.virtual.core.Scroller", {
+qx.Class.define("qx.ui.list.virtual.core.Scroller", {
   extend: qx.ui.core.scroll.AbstractScrollArea,
 
   /**
@@ -35,7 +35,7 @@ qx.Class.define("qx.ui.virtual.core.Scroller", {
   construct(rowCount, columnCount, cellHeight, cellWidth) {
     super();
 
-    this.__pane = new qx.ui.virtual.core.Pane(
+    this.__pane = new qx.ui.list.virtual.core.Pane(
       rowCount,
       columnCount,
       cellHeight,
@@ -54,7 +54,7 @@ qx.Class.define("qx.ui.virtual.core.Scroller", {
   },
 
   members: {
-    /** @type {qx.ui.virtual.core.Pane} Virtual pane. */
+    /** @type {qx.ui.list.virtual.core.Pane} Virtual pane. */
     __pane: null,
 
     /*
@@ -66,7 +66,7 @@ qx.Class.define("qx.ui.virtual.core.Scroller", {
     /**
      * Get the scroller's virtual pane.
      *
-     * @return {qx.ui.virtual.core.Pane} The scroller's pane.
+     * @return {qx.ui.list.virtual.core.Pane} The scroller's pane.
      */
     getPane() {
       return this.__pane;

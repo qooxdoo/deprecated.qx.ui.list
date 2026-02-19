@@ -25,16 +25,16 @@
  * @require(qx.bom.Stylesheet)
  *
  */
-qx.Class.define("qx.ui.virtual.cell.Abstract", {
+qx.Class.define("qx.ui.list.virtual.cell.Abstract", {
   type: "abstract",
   extend: qx.core.Object,
-  implement: qx.ui.virtual.cell.ICell,
+  implement: qx.ui.list.virtual.cell.ICell,
 
   construct() {
     super();
 
     // initialize stylesheet
-    qx.ui.virtual.cell.CellStylesheet.getInstance();
+    qx.ui.list.virtual.cell.CellStylesheet.getInstance();
   },
 
   members: {

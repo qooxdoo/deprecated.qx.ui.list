@@ -18,8 +18,8 @@
 
 ************************************************************************ */
 
-qx.Class.define("qx.ui.virtual.cell.Image", {
-  extend: qx.ui.virtual.cell.AbstractImage,
+qx.Class.define("qx.ui.list.virtual.cell.Image", {
+  extend: qx.ui.list.virtual.cell.AbstractImage,
 
   /*
   *****************************************************************************

@@ -65,11 +65,11 @@
  * and data structures, and therefore are exempt from BC concerns
  *
  *
- * @childControl row-layer {qx.ui.virtual.layer.Row} layer for all rows
+ * @childControl row-layer {qx.ui.list.virtual.layer.Row} layer for all rows
  */
 qx.Class.define("qx.ui.list.List", {
-  extend: qx.ui.virtual.core.Scroller,
-  include: [qx.ui.virtual.selection.MModel],
+  extend: qx.ui.list.virtual.core.Scroller,
+  include: [qx.ui.list.virtual.selection.MModel],
   implement: qx.data.controller.ISelection,
 
   /**
@@ -309,13 +309,13 @@ qx.Class.define("qx.ui.list.List", {
   },
 
   members: {
-    /** @type {qx.ui.virtual.layer.Row} background renderer */
+    /** @type {qx.ui.list.virtual.layer.Row} background renderer */
     _background: null,
 
     /** @type {qx.ui.list.provider.IListProvider} provider for cell rendering */
     _provider: null,
 
-    /** @type {qx.ui.virtual.layer.Abstract} layer which contains the items. */
+    /** @type {qx.ui.list.virtual.layer.Abstract} layer which contains the items. */
     _layer: null,
 
     /**
@@ -372,7 +372,7 @@ qx.Class.define("qx.ui.list.List", {
 
       switch (id) {
         case "row-layer":
-          control = new qx.ui.virtual.layer.Row();
+          control = new qx.ui.list.virtual.layer.Row();
           break;
       }
 
@@ -450,7 +450,7 @@ qx.Class.define("qx.ui.list.List", {
 
     /**
      * Returns the layer
-     * @return {qx.ui.virtual.core.ILayer}
+     * @return {qx.ui.list.virtual.core.ILayer}
      */
     getLayer() {
       return this._layer;

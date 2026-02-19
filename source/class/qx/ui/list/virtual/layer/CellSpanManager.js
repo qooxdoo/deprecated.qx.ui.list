@@ -22,21 +22,21 @@
  * It provides functionality to compute, which spanning cells are visible
  * in a given view port and how they have to be placed.
  */
-qx.Class.define("qx.ui.virtual.layer.CellSpanManager", {
+qx.Class.define("qx.ui.list.virtual.layer.CellSpanManager", {
   extend: qx.core.Object,
 
   /**
-   * @param rowConfig {qx.ui.virtual.core.Axis} The row configuration of the pane
+   * @param rowConfig {qx.ui.list.virtual.core.Axis} The row configuration of the pane
    *    in which the cells will be rendered
-   * @param columnConfig {qx.ui.virtual.core.Axis} The column configuration of the pane
+   * @param columnConfig {qx.ui.list.virtual.core.Axis} The column configuration of the pane
    *    in which the cells will be rendered
    */
   construct(rowConfig, columnConfig) {
     super();
 
     if (qx.core.Environment.get("qx.debug")) {
-      this.assertInstance(rowConfig, qx.ui.virtual.core.Axis);
-      this.assertInstance(columnConfig, qx.ui.virtual.core.Axis);
+      this.assertInstance(rowConfig, qx.ui.list.virtual.core.Axis);
+      this.assertInstance(columnConfig, qx.ui.list.virtual.core.Axis);
     }
 
     this._cells = {};

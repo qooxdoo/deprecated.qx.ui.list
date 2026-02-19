@@ -20,8 +20,8 @@
 /**
  * Row selection manager
  */
-qx.Class.define("qx.ui.virtual.selection.Row", {
-  extend: qx.ui.virtual.selection.Abstract,
+qx.Class.define("qx.ui.list.virtual.selection.Row", {
+  extend: qx.ui.list.virtual.selection.Abstract,
 
   /*
   *****************************************************************************

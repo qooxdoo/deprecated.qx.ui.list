@@ -21,7 +21,7 @@
  * Singleton wrapper for the stylesheet containing the CSS rules for HTML cells.
  *
  */
-qx.Class.define("qx.ui.virtual.cell.CellStylesheet", {
+qx.Class.define("qx.ui.list.virtual.cell.CellStylesheet", {
   extend: qx.core.Object,
   type: "singleton",
 

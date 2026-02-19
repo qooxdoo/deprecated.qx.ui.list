@@ -1,9 +1,9 @@
 /**
  * Abstract base class for widget based cell renderer.
  */
-qx.Class.define("qx.ui.virtual.cell.AbstractWidget", {
+qx.Class.define("qx.ui.list.virtual.cell.AbstractWidget", {
   extend: qx.core.Object,
-  implement: [qx.ui.virtual.cell.IWidgetCell],
+  implement: [qx.ui.list.virtual.cell.IWidgetCell],
 
   construct() {
     super();

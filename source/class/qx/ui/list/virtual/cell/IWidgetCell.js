@@ -19,9 +19,9 @@
 
 /**
  * A widget cell renderer manages a pool of widgets to render cells in a
- * {@link qx.ui.virtual.layer.WidgetCell} layer.
+ * {@link qx.ui.list.virtual.layer.WidgetCell} layer.
  */
-qx.Interface.define("qx.ui.virtual.cell.IWidgetCell", {
+qx.Interface.define("qx.ui.list.virtual.cell.IWidgetCell", {
   members: {
     /**
      * Get a widget instance to render the cell

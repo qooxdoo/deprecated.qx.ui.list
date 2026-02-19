@@ -23,8 +23,8 @@
  * Renders a date according to the configured date formatter.
  *
  */
-qx.Class.define("qx.ui.virtual.cell.Date", {
-  extend: qx.ui.virtual.cell.Cell,
+qx.Class.define("qx.ui.list.virtual.cell.Date", {
+  extend: qx.ui.list.virtual.cell.Cell,
 
   /**
    * @param dateFormat {qx.util.format.DateFormat|null} optional date formatter

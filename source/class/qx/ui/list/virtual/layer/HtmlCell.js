@@ -21,11 +21,11 @@
  * The HtmlCell layer renders each cell with custom HTML markup. The concrete
  * markup for each cell is provided by a cell provider.
  */
-qx.Class.define("qx.ui.virtual.layer.HtmlCell", {
-  extend: qx.ui.virtual.layer.Abstract,
+qx.Class.define("qx.ui.list.virtual.layer.HtmlCell", {
+  extend: qx.ui.list.virtual.layer.Abstract,
 
   /**
-   * @param htmlCellProvider {qx.ui.virtual.core.IHtmlCellProvider} This class
+   * @param htmlCellProvider {qx.ui.list.virtual.core.IHtmlCellProvider} This class
    *    provides the HTML markup for each cell.
    */
   construct(htmlCellProvider) {
@@ -35,7 +35,7 @@ qx.Class.define("qx.ui.virtual.layer.HtmlCell", {
     if (qx.core.Environment.get("qx.debug")) {
       this.assertInterface(
         htmlCellProvider,
-        qx.ui.virtual.core.IHtmlCellProvider
+        qx.ui.list.virtual.core.IHtmlCellProvider
       );
     }
     this._cellProvider = htmlCellProvider;

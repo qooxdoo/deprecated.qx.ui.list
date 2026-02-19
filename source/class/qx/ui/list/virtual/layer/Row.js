@@ -19,8 +19,8 @@
 /**
  * The Row layer renders row background colors.
  */
-qx.Class.define("qx.ui.virtual.layer.Row", {
-  extend: qx.ui.virtual.layer.AbstractBackground,
+qx.Class.define("qx.ui.list.virtual.layer.Row", {
+  extend: qx.ui.list.virtual.layer.AbstractBackground,
 
   properties: {
     // overridden
@@ -56,7 +56,7 @@ qx.Class.define("qx.ui.virtual.layer.Row", {
       ) {
         let child;
         if (children.length <= rowSizeIndex) {
-          child = new qx.ui.virtual.layer.BackgroundSpan();
+          child = new qx.ui.list.virtual.layer.BackgroundSpan();
           this._add(child);
         } else {
           child = children[rowSizeIndex];

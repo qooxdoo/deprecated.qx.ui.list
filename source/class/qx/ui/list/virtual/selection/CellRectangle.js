@@ -20,8 +20,8 @@
 /**
  * Cell selection manager
  */
-qx.Class.define("qx.ui.virtual.selection.CellRectangle", {
-  extend: qx.ui.virtual.selection.Abstract,
+qx.Class.define("qx.ui.list.virtual.selection.CellRectangle", {
+  extend: qx.ui.list.virtual.selection.Abstract,
 
   /*
   *****************************************************************************

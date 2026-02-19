@@ -44,13 +44,13 @@
  * });
  * </pre>
  */
-qx.Class.define("qx.ui.virtual.cell.WidgetCell", {
-  extend: qx.ui.virtual.cell.AbstractWidget,
+qx.Class.define("qx.ui.list.virtual.cell.WidgetCell", {
+  extend: qx.ui.list.virtual.cell.AbstractWidget,
 
   properties: {
     /**
      * Delegation object, which can have one or more functions defined by the
-     * {@link qx.ui.virtual.cell.IWidgetCellDelegate} interface.
+     * {@link qx.ui.list.virtual.cell.IWidgetCellDelegate} interface.
      */
     delegate: {
       apply: "_applyDelegate",

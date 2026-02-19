@@ -1,4 +1,4 @@
 /**
- * qx.ui.virtual.cell package
+ * qx.ui.list.virtual.cell package
  *
  */

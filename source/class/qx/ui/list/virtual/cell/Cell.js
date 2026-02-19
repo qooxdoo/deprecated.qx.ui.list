@@ -22,13 +22,13 @@
  *
  * This cell renderer can be styled by an appearance theme.
  */
-qx.Class.define("qx.ui.virtual.cell.Cell", {
-  extend: qx.ui.virtual.cell.Abstract,
+qx.Class.define("qx.ui.list.virtual.cell.Cell", {
+  extend: qx.ui.list.virtual.cell.Abstract,
 
   construct() {
     super();
 
-    this.__stylesheet = qx.ui.virtual.cell.CellStylesheet.getInstance();
+    this.__stylesheet = qx.ui.list.virtual.cell.CellStylesheet.getInstance();
 
     this.__userStyles = {};
     this.__themeStyles = {};

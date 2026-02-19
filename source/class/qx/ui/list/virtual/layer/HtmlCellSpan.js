@@ -20,20 +20,20 @@
  * An extended HtmlCell layer, which adds the possibility to specify row and
  * column spans for specific cells.
  */
-qx.Class.define("qx.ui.virtual.layer.HtmlCellSpan", {
-  extend: qx.ui.virtual.layer.HtmlCell,
+qx.Class.define("qx.ui.list.virtual.layer.HtmlCellSpan", {
+  extend: qx.ui.list.virtual.layer.HtmlCell,
 
   /**
-   * @param htmlCellProvider {qx.ui.virtual.core.IHtmlCellProvider} This class
+   * @param htmlCellProvider {qx.ui.list.virtual.core.IHtmlCellProvider} This class
    *    provides the HTML markup for each cell.
-   * @param rowConfig {qx.ui.virtual.core.Axis} The row configuration of the pane
+   * @param rowConfig {qx.ui.list.virtual.core.Axis} The row configuration of the pane
    *    in which the cells will be rendered
-   * @param columnConfig {qx.ui.virtual.core.Axis} The column configuration of
+   * @param columnConfig {qx.ui.list.virtual.core.Axis} The column configuration of
    *    the pane in which the cells will be rendered
    */
   construct(htmlCellProvider, rowConfig, columnConfig) {
     super(htmlCellProvider);
-    this._spanManager = new qx.ui.virtual.layer.CellSpanManager(
+    this._spanManager = new qx.ui.list.virtual.layer.CellSpanManager(
       rowConfig,
       columnConfig
     );

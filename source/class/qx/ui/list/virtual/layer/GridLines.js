@@ -20,8 +20,8 @@
 /**
  * Represents horizontal or vertical lines.
  */
-qx.Class.define("qx.ui.virtual.layer.GridLines", {
-  extend: qx.ui.virtual.layer.Abstract,
+qx.Class.define("qx.ui.list.virtual.layer.GridLines", {
+  extend: qx.ui.list.virtual.layer.Abstract,
 
   /**
    * @param orientation {String?"horizontal"} The grid line orientation.

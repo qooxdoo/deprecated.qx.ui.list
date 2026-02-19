@@ -22,8 +22,8 @@
  *
  * Renders the call using the configured number formatter.
  */
-qx.Class.define("qx.ui.virtual.cell.Number", {
-  extend: qx.ui.virtual.cell.Cell,
+qx.Class.define("qx.ui.list.virtual.cell.Number", {
+  extend: qx.ui.list.virtual.cell.Cell,
 
   /**
    * @param numberFormat {qx.util.format.NumberFormat|null} Optional number
