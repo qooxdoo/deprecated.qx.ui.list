@@ -1,25 +1,14 @@
 {
  "$schema": "https://qooxdoo.org/schema/Manifest-2-0-0.json",
-  "info" :
-  {
-    "name" : "qx.ui.list",
-
-    "summary" : "",
-    "description" : "",
-
-    "homepage" : "",
-
-    "license" : "MIT license",
-    "authors" : [
-      {
-        "name": "",
-        "email": ""
-      }
-    ],
-
-    "version" : "1.0.0"
+  "info": {
+    "name": "deprecated.qx.io.list",
+    "summary": "The qx.io.list namespace (<v8.0)",
+    "description": "",
+    "homepage": "http://www.qooxdoo.org",
+    "license": "MIT license",
+    "authors": [],
+    "version": "1.0.0"
   },
-
   "provides" :
   {
     "namespace"   : "qx.ui.list",
@@ -27,5 +16,8 @@
     "class"       : "source/class",
     "resource"    : "source/resource",
     "translation" : "source/translation"
+  },
+  "requires": {
+    "@qooxdoo/framework": "^7.0.0"
   }
 }
