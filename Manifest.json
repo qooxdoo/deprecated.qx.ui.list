@@ -1,31 +1,29 @@
 {
- "$schema": "https://qooxdoo.org/schema/Manifest-2-0-0.json",
-  "info" :
-  {
-    "name" : "qx.ui.list",
+  "$schema": "https://qooxdoo.org/schema/Manifest-2-0-0.json",
+  "info": {
+    "name": "qx.ui.list",
 
-    "summary" : "",
-    "description" : "",
+    "summary": "The deprecated virtual list and tree widgets from Qooxdoo 7 and earlier",
+    "description": "",
 
-    "homepage" : "",
+    "homepage": "https://www.qooxdoo.org",
 
-    "license" : "MIT license",
-    "authors" : [
+    "license": "MIT license",
+    "authors": [
       {
-        "name": "",
-        "email": ""
+        "name": "Qooxdoo Team",
+        "email": "info@qooxdoo.org"
       }
     ],
 
-    "version" : "1.0.0"
+    "version": "1.0.0"
   },
 
-  "provides" :
-  {
-    "namespace"   : "qx.ui.list",
-    "encoding"    : "utf-8",
-    "class"       : "source/class",
-    "resource"    : "source/resource",
-    "translation" : "source/translation"
+  "provides": {
+    "namespace": "qx.ui.list",
+    "encoding": "utf-8",
+    "class": "source/class",
+    "resource": "source/resource",
+    "translation": "source/translation"
   }
 }
