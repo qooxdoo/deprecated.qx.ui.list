@@ -38,6 +38,6 @@
     "translation": "source/translation"
   },
   "requires": {
-    "@qooxdoo/framework": ">=8.0.0"
+    "@qooxdoo/framework": "^7.9.0 || ^8.0.0-beta"
   }
 }
