@@ -1,4 +1,4 @@
-qx.Theme.define("qx.ui.virtual.theme.classic.MAppearance", {
+qx.Theme.define("qx.ui.virtual.theme.classic.Appearance", {
   appearances: {
     /*
     ---------------------------------------------------------------------------

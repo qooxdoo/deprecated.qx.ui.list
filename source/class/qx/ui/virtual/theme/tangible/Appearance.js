@@ -1,7 +1,5 @@
 qx.Theme.define("qx.ui.virtual.theme.tangible.Appearance", {
   appearances: {
-    ,
-
     /*
     ---------------------------------------------------------------------------
       TREEVIRTUAL
@@ -120,7 +118,9 @@ qx.Theme.define("qx.ui.virtual.theme.tangible.Appearance", {
       style(states) {
         return {
           backgroundColor: states.selected ? "primary-selected" : "surface",
-          textColor: states.selected ? "text-on-primary" : "text-primary-on-surface",
+          textColor: states.selected
+            ? "text-on-primary"
+            : "text-primary-on-surface",
           padding: [3, 6]
         };
       }

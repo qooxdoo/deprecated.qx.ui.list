@@ -1,4 +1,4 @@
-qx.Theme.define("qx.ui.virtual.theme.indigo.MAppearance", {
+qx.Theme.define("qx.ui.virtual.theme.indigo.Appearance", {
   appearances: {
     "virtual-tree": {
       include: "tree",
