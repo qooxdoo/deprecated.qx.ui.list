@@ -25,6 +25,8 @@
  *     <li>{@link qx.ui.treevirtual.MFamily}</li>
  *   </ul>
  * </p>
+ *
+ * @use(qx.ui.virtual.theme.ThemeLoader)
  */
 qx.Class.define("qx.ui.treevirtual.TreeVirtual", {
   extend: qx.ui.table.Table,

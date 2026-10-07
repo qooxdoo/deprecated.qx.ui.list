@@ -23,6 +23,8 @@
  * The actual rendering is performed by one or several layers ({@link ILayer}.
  * The pane computes, which cells of the virtual area is visible and instructs
  * the layers to render these cells.
+ *
+ * @use(qx.ui.virtual.theme.ThemeLoader)
  */
 qx.Class.define("qx.ui.virtual.core.Pane", {
   extend: qx.ui.core.Widget,
