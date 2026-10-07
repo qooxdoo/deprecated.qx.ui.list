@@ -42,7 +42,7 @@ qx.Theme.define("qx.ui.virtual.theme.simple.Appearance", {
     "treevirtual-line": {
       style(states) {
         return {
-          icon: qx.theme.simple.Image.URLS["treevirtual-line"]
+          icon: qx.ui.virtual.theme.simple.Image.URLS["treevirtual-line"]
         };
       }
     },
@@ -66,7 +66,7 @@ qx.Theme.define("qx.ui.virtual.theme.simple.Appearance", {
     "treevirtual-only-contract": {
       style(states) {
         return {
-          icon: qx.theme.simple.Image.URLS["treevirtual-minus-only"]
+          icon: qx.ui.virtual.theme.simple.Image.URLS["treevirtual-minus-only"]
         };
       }
     },
@@ -74,7 +74,7 @@ qx.Theme.define("qx.ui.virtual.theme.simple.Appearance", {
     "treevirtual-only-expand": {
       style(states) {
         return {
-          icon: qx.theme.simple.Image.URLS["treevirtual-plus-only"]
+          icon: qx.ui.virtual.theme.simple.Image.URLS["treevirtual-plus-only"]
         };
       }
     },
@@ -82,7 +82,7 @@ qx.Theme.define("qx.ui.virtual.theme.simple.Appearance", {
     "treevirtual-start-contract": {
       style(states) {
         return {
-          icon: qx.theme.simple.Image.URLS["treevirtual-minus-start"]
+          icon: qx.ui.virtual.theme.simple.Image.URLS["treevirtual-minus-start"]
         };
       }
     },
@@ -90,7 +90,7 @@ qx.Theme.define("qx.ui.virtual.theme.simple.Appearance", {
     "treevirtual-start-expand": {
       style(states) {
         return {
-          icon: qx.theme.simple.Image.URLS["treevirtual-plus-start"]
+          icon: qx.ui.virtual.theme.simple.Image.URLS["treevirtual-plus-start"]
         };
       }
     },
@@ -98,7 +98,7 @@ qx.Theme.define("qx.ui.virtual.theme.simple.Appearance", {
     "treevirtual-end-contract": {
       style(states) {
         return {
-          icon: qx.theme.simple.Image.URLS["treevirtual-minus-end"]
+          icon: qx.ui.virtual.theme.simple.Image.URLS["treevirtual-minus-end"]
         };
       }
     },
@@ -106,7 +106,7 @@ qx.Theme.define("qx.ui.virtual.theme.simple.Appearance", {
     "treevirtual-end-expand": {
       style(states) {
         return {
-          icon: qx.theme.simple.Image.URLS["treevirtual-plus-end"]
+          icon: qx.ui.virtual.theme.simple.Image.URLS["treevirtual-plus-end"]
         };
       }
     },
@@ -114,7 +114,7 @@ qx.Theme.define("qx.ui.virtual.theme.simple.Appearance", {
     "treevirtual-cross-contract": {
       style(states) {
         return {
-          icon: qx.theme.simple.Image.URLS["treevirtual-minus-cross"]
+          icon: qx.ui.virtual.theme.simple.Image.URLS["treevirtual-minus-cross"]
         };
       }
     },
@@ -122,7 +122,7 @@ qx.Theme.define("qx.ui.virtual.theme.simple.Appearance", {
     "treevirtual-cross-expand": {
       style(states) {
         return {
-          icon: qx.theme.simple.Image.URLS["treevirtual-plus-cross"]
+          icon: qx.ui.virtual.theme.simple.Image.URLS["treevirtual-plus-cross"]
         };
       }
     },
@@ -130,7 +130,7 @@ qx.Theme.define("qx.ui.virtual.theme.simple.Appearance", {
     "treevirtual-end": {
       style(states) {
         return {
-          icon: qx.theme.simple.Image.URLS["treevirtual-end"]
+          icon: qx.ui.virtual.theme.simple.Image.URLS["treevirtual-end"]
         };
       }
     },
@@ -138,7 +138,7 @@ qx.Theme.define("qx.ui.virtual.theme.simple.Appearance", {
     "treevirtual-cross": {
       style(states) {
         return {
-          icon: qx.theme.simple.Image.URLS["treevirtual-cross"]
+          icon: qx.ui.virtual.theme.simple.Image.URLS["treevirtual-cross"]
         };
       }
     },
