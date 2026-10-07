@@ -28,7 +28,7 @@
         "email": "info@qooxdoo.org"
       }
     ],
-    "version": "1.0.5"
+    "version": "1.0.6"
   },
   "provides": {
     "namespace": "qx.ui.list",
