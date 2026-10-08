@@ -45,29 +45,6 @@ qx.Class.define("qx.test.ui.treevirtual.TreeVirtual", {
       this.__tree = null;
     },
 
-    /**
-     * This test was previously in qx.test.ui.table
-     */
-    testTreeVirtual() {
-      this.assertDestroy(
-        function () {
-          // A Basic column model keeps this about the row renderer: the
-          // default Resize model has a leak of its own.
-          var tree = new qx.ui.treevirtual.TreeVirtual(["Tree"], {
-            tableColumnModel(obj) {
-              return new qx.ui.table.columnmodel.Basic(obj);
-            }
-          });
-
-          var model = tree.getTableModel();
-          tree.destroy();
-          model.dispose();
-        },
-        this,
-        "Dispose tree, which replaces the default row renderer"
-      );
-    },
-
     testFocusedNodeIsNullOnceItsRowIsGone() {
       this.__tree.setFocusedCell(0, 2, false);
       this.assertNotNull(

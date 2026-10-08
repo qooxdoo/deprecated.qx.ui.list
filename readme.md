@@ -52,3 +52,17 @@ qx.Theme.define("myapp.theme.Appearance", {
 Use the table above to pick the classes; for an Indigo based theme include `qx.ui.virtual.theme.indigo.Appearance` **before**
 `qx.ui.virtual.theme.simple.Appearance` (with `include` the first theme in the list wins), plus `qx.ui.virtual.theme.simple.Decoration` in your
 decoration theme. `qx.ui.virtual.theme.simple.Image` and `qx.ui.virtual.theme.indigo.ImageDark` are image mapping classes, not themes.
+
+## Running the tests
+
+The tests of this package (`qx.test.ui.list.*`, `qx.test.ui.virtual.*`, `qx.test.ui.treevirtual.*`, ...) have their own
+test application in `test/`, which runs them with [qxl.testtapper](https://github.com/qooxdoo/qxl.testtapper):
+
+```bash
+cd test
+npm install
+npx qx test
+```
+
+To test against a local framework checkout, use its compiler instead of `npx qx`, e.g. `../../qooxdoo/bin/source/qx test`.
+They are not part of the framework tests any more.

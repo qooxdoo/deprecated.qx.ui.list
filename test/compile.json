@@ -1,0 +1,38 @@
+{
+  "$schema": "https://qooxdoo.org/schema/compile-1-0-0.json",
+  "targets": [
+    {
+      "type": "source",
+      "outputPath": "compiled/source"
+    },
+    {
+      "type": "build",
+      "outputPath": "compiled/build"
+    }
+  ],
+  "defaultTarget": "source",
+  "locales": ["en"],
+  "libraries": [".."],
+  "applications": [
+    {
+      "class": "qxl.testtapper.Application",
+      "name": "testtapper",
+      "theme": "qx.theme.Simple",
+      "title": "deprecated.qx.ui.list TestTAPper",
+      "environment": {
+        "qx.icontheme": "Tango",
+        "qxl.testtapper.testNameSpace": "qx.test",
+        "qxl.testtapper.browsers": ["chromium"],
+        "qx.environment.allowRuntimeMutations": true
+      },
+      "include": [
+        "qx.test.ui.list.*",
+        "qx.test.ui.form.virtual.*",
+        "qx.test.ui.form.VirtualSelectBox",
+        "qx.test.ui.tree.virtual.*",
+        "qx.test.ui.treevirtual.*",
+        "qx.test.ui.virtual.*"
+      ]
+    }
+  ]
+}
