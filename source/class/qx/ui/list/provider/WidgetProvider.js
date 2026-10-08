@@ -93,6 +93,7 @@ qx.Class.define("qx.ui.list.provider.WidgetProvider", {
      * @param column {qx.ui.list.AbstractColumn} the column to add
      */
     addColumn(column) {
+      let hadHeaderRow = this.hasHeaderRow();
       if (this.__columns === null) this.__columns = [];
       let columnIndex = this.__columns.length;
       column.setColumnIndex(columnIndex);
@@ -111,7 +112,20 @@ qx.Class.define("qx.ui.list.provider.WidgetProvider", {
 
       this._list
         .getChildControl("row-layer")
-        .setHasHeader(this.isShowHeaders());
+        .setHasHeader(this.hasHeaderRow());
+      if (hadHeaderRow !== this.hasHeaderRow()) {
+        this._list.refresh();
+      }
+    },
+
+    /**
+     * Whether row 0 is a header row. A header is only shown when headers are
+     * enabled and there are columns, a list without columns has no header row.
+     *
+     * @return {Boolean} <code>true</code> if row 0 is the header row
+     */
+    hasHeaderRow() {
+      return this.__columns !== null && this.isShowHeaders();
     },
 
     /**
@@ -260,9 +274,10 @@ qx.Class.define("qx.ui.list.provider.WidgetProvider", {
      * @Override
      */
     _applyShowHeaders(value) {
-      this._list
-        .getChildControl("row-layer")
-        .setHasHeader(this.__columns !== null && value);
+      this._list.getChildControl("row-layer").setHasHeader(this.hasHeaderRow());
+      if (this.__columns !== null) {
+        this._list.refresh();
+      }
     },
 
     /*
@@ -378,7 +393,7 @@ qx.Class.define("qx.ui.list.provider.WidgetProvider", {
      * @Override
      */
     isSelectable(cell) {
-      if (this.isShowHeaders() && cell.row == 0) {
+      if (this.hasHeaderRow() && cell.row == 0) {
         return false;
       }
       if (this._list._isGroup(cell.row)) {
@@ -458,6 +473,9 @@ qx.Class.define("qx.ui.list.provider.WidgetProvider", {
      * @param event {qx.event.type.Data} fired event.
      */
     _onChangeDelegate(event) {
+      // the rendered widgets belong to the old renderers and have to be
+      // created and bound again by the new ones
+      this._list.getLayer().poolCellWidgets();
       this._itemRenderer.dispose();
       this._itemRenderer = this.createItemRenderer();
       this._itemRenderer.addListener("created", this._onItemCreated, this);

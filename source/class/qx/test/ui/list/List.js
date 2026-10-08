@@ -393,7 +393,11 @@ qx.Class.define("qx.test.ui.list.List", {
       qx.event.Timer.once(
         function () {
           this.resume(function () {
-            var rowConfig = this._list.getPane().getRowConfig();
+            var pane = this._list.getPane();
+            var rowConfig = pane.getRowConfig();
+            var padding =
+              (pane.getCellPaddingTop() || 0) +
+              (pane.getCellPaddingBottom() || 0);
 
             var testedWidgets = 0;
 
@@ -405,8 +409,12 @@ qx.Class.define("qx.test.ui.list.List", {
                 continue;
               }
 
+              // the item height is the minimum height of an auto sized row
               this.assertEquals(
-                widget.getSizeHint().height,
+                Math.max(
+                  widget.getSizeHint().height,
+                  this._list.getItemHeight()
+                ) + padding,
                 rowConfig.getItemSize(i)
               );
 

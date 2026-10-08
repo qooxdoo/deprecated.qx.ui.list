@@ -504,7 +504,7 @@ qx.Class.define("qx.ui.list.List", {
         data = this.getGroups().getItem(this._lookupGroup(cell.row));
       } else {
         let row = cell.row;
-        if (this.getProvider().getShowHeaders()) {
+        if (this.getProvider().hasHeaderRow()) {
           row--;
         }
         data = model.getItem(this._lookupByRowAndColumn(row, cell.column));
@@ -593,20 +593,22 @@ qx.Class.define("qx.ui.list.List", {
      * Performs a lookup from model index to row.
      *
      * @param index {Number} The index to look at.
-     * @return {Map} containing `row` and `column`, both are zero based indexes
+     * @return {Map|null} containing `row` and `column`, both are zero based indexes,
+     *   or <code>null</code> if the model index is not shown in the list
      */
     _reverseLookup(index) {
       if (index < 0) {
         return null;
       }
+      let headerRows = this.getProvider().hasHeaderRow() ? 1 : 0;
       for (let i = 0; i < this.__lookupTable.length; i++) {
         let arr = this.__lookupTable[i];
         if (arr !== null) {
-          let col = arr.indexOf(index);
-          if (col > -1) return { row: i, col };
+          let column = arr.indexOf(index);
+          if (column > -1) return { row: i + headerRows, column };
         }
       }
-      return -1;
+      return null;
     },
 
     /**
@@ -617,7 +619,7 @@ qx.Class.define("qx.ui.list.List", {
      *  <code>false</code> if the row is an item element.
      */
     _isGroup(row) {
-      if (this.getProvider().getShowHeaders()) {
+      if (this.getProvider().hasHeaderRow()) {
         if (row === 0) return false;
         row--;
       }
@@ -767,6 +769,7 @@ qx.Class.define("qx.ui.list.List", {
       // otherwise bindings might be dispatched to wrong items
       // see: https://github.com/qooxdoo/qooxdoo/issues/196
       this._provider.removeBindings();
+      this._layer.poolCellWidgets();
       this.__buildUpLookupTable();
       this._applyDefaultSelection();
 
@@ -788,7 +791,9 @@ qx.Class.define("qx.ui.list.List", {
     __updateRowColumnCount() {
       this.getPane()
         .getRowConfig()
-        .setItemCount(this.__lookupTable.length + 1);
+        .setItemCount(
+          this.__lookupTable.length + (this.getProvider().hasHeaderRow() ? 1 : 0)
+        );
       let count = this.getRepeatingColumnCount();
       if (count !== 1) {
         let columnConfig = this.getPane().getColumnConfig();
@@ -797,6 +802,12 @@ qx.Class.define("qx.ui.list.List", {
         for (let i = 0; i < count; i++) {
           columnConfig.setItemFlex(i, autoSize ? 1 : null);
         }
+      } else if (this.getProvider().getColumns() === null) {
+        // a plain list has a single column, which fills the width of the
+        // list (when auto sizing, otherwise _onResize sets its width)
+        this.getPane()
+          .getColumnConfig()
+          .setItemFlex(0, this.isAutoSizeColumns() ? 1 : null);
       }
       this.getPane().fullUpdate();
     },

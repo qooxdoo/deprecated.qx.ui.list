@@ -20,7 +20,10 @@ qx.Mixin.define("qx.test.ui.list.MAssert", {
   members: {
     assertModelEqualsRowData(model, list) {
       for (var i = 0; i < model.getLength(); i++) {
-        this.assertIdentical(model.getItem(i), list._getDataFromRow(i));
+        this.assertIdentical(
+          model.getItem(i),
+          list._getDataFromRow({ row: i, column: 0 })
+        );
       }
     },
 

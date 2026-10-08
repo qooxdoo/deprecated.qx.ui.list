@@ -171,6 +171,27 @@ qx.Class.define("qx.ui.list.virtual.layer.WidgetCell", {
     },
 
     /**
+     * Pools all rendered cell widgets, so that the cell provider is asked for
+     * them (and binds them) again on the next layout. This is needed after the
+     * bindings of the cell widgets have been removed, e.g. because the model
+     * or the delegate has changed; a plain full update keeps the widgets.
+     */
+    poolCellWidgets() {
+      var cellProvider = this._cellProvider;
+      var children = this._getChildren().concat();
+      for (var i = 0; i < children.length; i++) {
+        var child = children[i];
+        if (!child.getUserData("cell.empty")) {
+          this._activateNotEmptyChild(child);
+          this._remove(child);
+          cellProvider.poolCellWidget(child);
+          child.setUserData("cell.row", null);
+          child.setUserData("cell.column", null);
+        }
+      }
+    },
+
+    /**
      * Activates one of the still not empty items.
      * @param elementToPool {qx.ui.core.Widget} The widget which gets pooled.
      */

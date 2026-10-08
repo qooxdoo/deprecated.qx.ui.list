@@ -418,7 +418,8 @@ qx.Class.define("qx.ui.form.VirtualSelectBox", {
       var selection = list.getSelection();
       var length = list._getLookupTable().length;
       var startIndex = model.indexOf(selection.getItem(0));
-      var startRow = list._reverseLookup(startIndex);
+      var startCell = list._reverseLookup(startIndex);
+      var startRow = startCell ? startCell.row : -1;
 
       for (var i = 1; i <= length; i++) {
         var row = (i + startRow) % length;

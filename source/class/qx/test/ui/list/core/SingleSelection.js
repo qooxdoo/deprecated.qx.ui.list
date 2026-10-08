@@ -64,18 +64,18 @@ qx.Class.define("qx.test.ui.list.core.SingleSelection", {
       var selection = this._list._manager.getSelection();
 
       this.assertEquals(1, selection.length);
-      this.assertEquals(2, selection[0]);
+      this.assertEquals(2, selection[0].row);
     },
 
     testSelectionByUserInteraction() {
       var selection = this._list.getSelection();
 
-      this._list._manager.selectItem(2);
+      this._list._manager.selectItem({ row: 2, column: 0 });
       this.flush();
 
       this.assertEquals(1, selection.getLength());
       this.assertEquals(this._model.getItem(2), selection.getItem(0));
-      this.assertEquals(2, this._list._manager.getSelectedItem());
+      this.assertEquals(2, this._list._manager.getSelectedItem().row);
     },
 
     testSelectionEventByUserInteraction() {
@@ -86,13 +86,13 @@ qx.Class.define("qx.test.ui.list.core.SingleSelection", {
         selection,
         "change",
         function () {
-          self._list._manager.selectItem(2);
+          self._list._manager.selectItem({ row: 2, column: 0 });
           self.flush();
         },
         function (e) {
           self.assertEquals(1, selection.getLength());
           self.assertEquals(self._model.getItem(2), selection.getItem(0));
-          self.assertEquals(2, self._list._manager.getSelectedItem());
+          self.assertEquals(2, self._list._manager.getSelectedItem().row);
         }
       );
     },
@@ -128,7 +128,7 @@ qx.Class.define("qx.test.ui.list.core.SingleSelection", {
       // check selection from manager
       var selection = this._list._manager.getSelection();
       this.assertEquals(1, selection.length);
-      this.assertEquals(0, selection[0]);
+      this.assertEquals(0, selection[0].row);
     },
 
     testInvalidSelectionWithFilter() {
@@ -210,7 +210,7 @@ qx.Class.define("qx.test.ui.list.core.SingleSelection", {
       // check row == last index
       this.assertEquals(
         this._model.getLength() - 1,
-        this._list._manager.getSelection()[0],
+        this._list._manager.getSelection()[0].row,
         "Row is wrong on Manager"
       );
     },

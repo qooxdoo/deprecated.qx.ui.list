@@ -73,7 +73,9 @@ qx.Class.define("qx.test.ui.list.core.MultiSelection", {
 
     testSelectionByUserInteraction() {
       var selection = this._list.getSelection();
-      this._list._manager.replaceSelection([2, 3, 4, 7, 8, 9]);
+      this._list._manager.replaceSelection(
+        [2, 3, 4, 7, 8, 9].map(row => ({ row, column: 0 }))
+      );
       this.flush();
 
       // check selection on manager
@@ -115,7 +117,9 @@ qx.Class.define("qx.test.ui.list.core.MultiSelection", {
         selection,
         "change",
         function () {
-          self._list._manager.replaceSelection([2, 3, 4, 7, 8, 9]);
+          self._list._manager.replaceSelection(
+            [2, 3, 4, 7, 8, 9].map(row => ({ row, column: 0 }))
+          );
           self.flush();
         },
         function (e) {
