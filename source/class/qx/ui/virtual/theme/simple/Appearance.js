@@ -266,6 +266,22 @@ qx.Theme.define("qx.ui.virtual.theme.simple.Appearance", {
     "cell-boolean": "cell",
     "cell-atom": "cell",
     "cell-date": "cell",
-    "cell-html": "cell"
+    "cell-html": "cell",
+
+    /*
+      --------------------
+      VIRTUAL SELECTBOX
+      --------------------
+    */
+
+    "list-search-highlight": {
+      style(states) {
+        return {
+          backgroundColor: "rgba(255, 251, 0, 0.53)",
+          textDecorationStyle: "dotted",
+          textDecorationLine: "underline"
+        };
+      }
+    }
   }
 });

@@ -156,6 +156,60 @@ qx.Class.define("qx.test.ui.form.VirtualSelectBox", {
       }, 10);
 
       this.wait();
+    },
+
+    /**
+     * This test was previously in qx.test.ui.form.Resetter
+     */
+    testResetter() {
+      var model = new qx.data.Array("a", "b", "c");
+      var vsb = new qx.ui.form.VirtualSelectBox(model);
+      vsb.getSelection().setItem(0, "b");
+
+      var resetter = new qx.ui.form.Resetter();
+      resetter.add(vsb);
+
+      vsb.getSelection().setItem(0, "c");
+      resetter.reset();
+
+      this.assertEquals("b", vsb.getSelection().getItem(0));
+
+      resetter.dispose();
+      vsb.destroy();
+      model.dispose();
+    },
+
+    /**
+     * This test was previously in qx.test.ui.form.FormValidator
+     */
+    testValidateRequired() {
+      var manager = new qx.ui.form.validation.Manager();
+      var vsb = new qx.ui.form.VirtualSelectBox();
+      vsb.setRequired(true);
+      manager.add(vsb);
+      manager.validate();
+      this.assertFalse(vsb.isValid());
+
+      var model = qx.data.marshal.Json.createModel(["a", "b"]);
+      vsb.setModel(model);
+      manager.validate();
+      this.assertTrue(vsb.isValid());
+
+      manager.dispose();
+      vsb.destroy();
+      model.dispose();
+    },
+
+    testSearchHighlightAppearance() {
+      var style = qx.theme.manager.Appearance.getInstance().styleFrom(
+        "list-search-highlight"
+      );
+
+      this.assertNotNull(style, "list-search-highlight is not in the theme");
+      this.assertIdentical(
+        "rgba(255, 251, 0, 0.53)",
+        style.backgroundColor
+      );
     }
   }
 });
